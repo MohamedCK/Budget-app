@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body,
+html {
+  height: 100%;
+
+  /* overflow: hidden; */
+}
+
+body {
+  position: relative;
+}
+
+.group-container {
+  max-height: 70vh;
+}
+
+.expense-container {
+  max-height: 70vh;
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, #4267b2, #385898);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  border: 2px solid #4267b2;
+  color: #4267b2;
+}
+
+.category-container {
+  border: 3px solid white;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.transaction-container {
+  border: 3px solid white;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.new-category {
+  text-decoration: none;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.category-images {
+  width: 50px;
+}
+
+.new-category p {
+  margin: 20px 0;
+}
+
+.new-transaction p {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.floating-notice {
+  position: absolute !important;
+  left: 20px;
+  z-index: 9999;
+}
+
+.spice-color {
+  background-color: #316caf !important;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    font-size: 1rem;
+  }
+}

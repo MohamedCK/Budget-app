@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <%= form_with(model: expense, url: "#{action_name == 'edit' ? group_expense_path(@group, expense) : group_expenses_path(@group)}", class: "contents") do |form| %>
+    <% if expense.errors.any? %>
+      <div id="error_explanation" class="bg-danger text-white px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+        <ul>
+          <% expense.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="my-5">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :amount, class: "form-label" %>
+      <%= form.number_field :amount, step: ".01", class: "form-control" %>
+    </div>
+
+    <div class="mb-3 d-flex justify-content-center">
+      <%= form.submit "#{action_name == 'edit' ? 'Update' : 'Save'}", class: "new-category btn btn-light" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="d-flex fixed-bottom py-3 px-2" style="background-color: #60B524;">
+  <div class="container d-flex justify-content-center category-container">
+    <%= link_to groups_path, class: "back to category" do %>
+      <p style="color: #fff;">Back to Categories</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="d-flex fixed-bottom py-3 px-2" style="background-color: #60B524;">
+
+  <div class="container d-flex justify-content-center transaction-container" >
+    <%= link_to group_expenses_path(@group), class: "new-transaction", style: 'text-decoration: none' do %>
+      <p style="color: #fff;">Back to Transactions</p>
+    <% end %>
+  </div>
+</div>

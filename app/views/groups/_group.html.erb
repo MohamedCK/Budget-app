@@ -1,0 +1,25 @@
+    <%= link_to  group_expenses_path(group), class: "w-100", style: 'text-decoration: none; font-family: \'Proxima Nova\', sans-serif; color: #828282; ' do %>
+<div id="<%= dom_id group %>" class="card d-flex flex-column justify-content-between align-items-center">
+  <div class="w-100 gap-4 d-flex align-items-center justify-content-space-between p-2">
+    <%= image_tag group.icon, class: 'category-images'%>
+    <div class="flex-grow-1 text-center">
+      <h5 class="card-title text-start"><%= group.name %></h5>
+    </div>
+    <div class="flex-grow-0 font-weight-bold">
+      <p class="card-text" style="color: blacl"><strong>$<%= group.total_transactions %></strong></p>
+    </div>
+  </div>
+
+    <% if action_name != "show" %>
+    <div class="d-flex gap-2 align-self-start pb-2">
+    <%= link_to edit_group_path(group), class: "btn btn-outline-secondary btn-sm", 'data-turbolinks': false do %>
+      Edit
+    <% end %>
+    <%= button_to group_path(group), method: :delete, class: "btn btn-outline-secondary btn-sm", 'data-turbolinks': false, data: { confirm: 'Are you sure?' } do %>
+      Delete
+    <% end %>
+    </div>
+  <% end %>
+</div>
+    <%end%>
+

@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div id="groups" class=" group-container mt-3 d-flex gap-2 flex-column overflow-y-scroll">
+        <%= render @groups %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex fixed-bottom py-3 px-2" style="background-color: #60B524;">
+  <div class="container d-flex justify-content-center category-container">
+    <%= link_to new_group_path, class: "new-category" do %>
+      <p style="color: #fff;">New Category</p>
+    <% end %>
+  </div>
+</div>
